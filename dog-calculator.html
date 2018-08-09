@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<style>
+	#dog-cal-container {
+		background-color: #caefec;
+		width: 100%;
+		text-align: center;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	#dog-age-title {
+
+	}
+
+	#dog-age-input {
+		height: 50px;
+		width: 25%;
+		border: 2px solid rgba(204, 204, 204, 0.3);
+		border-radius: 15px;
+		box-shadow: 0px 18px 10px 3px rgba(204, 204, 204, 0.3);
+		text-align: center;
+		font-size: 34px;
+	}
+
+	.dog {
+		display: inline-block;
+		width: 30%;
+	}
+
+	.dog-img {
+		width: 150px;
+	}
+	</style>
+
+	<img src="https://d3vv6lp55qjaqc.cloudfront.net/items/2j0S320p3r2B1R3M0R2l/Screen%20Recording%202018-08-06%20at%2002.03%20PM.gif" width="100%"/>
+
+	<div id="dog-cal-container">
+		<h1 id="dog-age-title">How old is your dog in human years?</h1>
+		<input id="dog-age-input" placeholder="5">
+		<div id="dog-columns">
+			<div class="dog">
+				<h1 id="dog-small-age"></h2>
+				<img class="dog-img" src="https://cl.ly/0O3E2E1O2d3t/photo-schnauzer.png"/>
+				<h2 class="dog-type">Small dog</h2>
+			</div>
+			<div class="dog">
+				<h1 id="dog-medium-age"></h1>
+				<img class="dog-img" src="https://cl.ly/3b2N0k2K3t1C/photo-corgi.png"/>
+				<h2 class="dog-type">Medium dog</h2>
+			</div>
+			<div class="dog">
+				<h1 id="dog-big-age"></h1>
+				<img class="dog-img" src="https://cl.ly/0Q3p0p1b1d02/photo-malamute.png"/>
+				<h2 class="dog-type">Big dog</h2>
+			</div>
+		</div>
+		<p>*No dogs were harmed in the making of the calculator</p>
+	</div>
+
+	<script type="text/javascript">
+		var dogInput = document.getElementById("dog-age-input");
+		dogInput.addEventListener("change", dogAgeCalculator);
+		function dogAgeCalculator() {
+			var age = dogInput.value;
+			var smallDog = document.getElementById("dog-small-age");
+			var mediumDog = document.getElementById("dog-medium-age");
+			var bigDog = document.getElementById("dog-big-age");
+			smallDog.innerHTML = age * 4 + 20;
+			mediumDog.innerHTML = age * 6 + 15;
+			bigDog.innerHTML = age * 9 + 4;
+		}
+	</script>
+</body>
+</html>
